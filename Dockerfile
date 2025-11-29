@@ -3,7 +3,7 @@
 # ==========================
 
 # Imagen base fija de n8n
-FROM n8nio/n8n:1.204.0
+FROM n8nio/n8n:stable
 
 # --------------------------
 # Variables de entorno básicas
