@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: n8n-yolibot
+    env: docker
+    dockerfilePath: Dockerfile
+    repo: https://github.com/Pucelano75/n8n-yolibot
+    branch: main
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: http
+      - key: GENERIC_TIMEZONE
+        value: Europe/Madrid
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8314666081:AAFmyxc9Q3Ewne7K9dyiiQmBWAKiYrXYfdE
+      - key: WEBHOOK_URL
+        value: https://n8n-yolibot.onrender.com/webhook/9f6ba431-d161-4924-b96a-da58e0f59972
+
