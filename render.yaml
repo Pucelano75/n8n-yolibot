@@ -1,23 +1,25 @@
-# render.yaml para desplegar n8n con Docker en Render
 services:
   - type: web
     name: n8n-yolibot
     env: docker
     plan: free
-    autoDeploy: true
-    branch: main
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: "admin"                 # Cambia por el usuario que quieras
+        value: "cnava.inc@gmail.com"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "password123"           # Cambia por tu contraseña segura
+        value: "Dnt#Cen555"
       - key: N8N_HOST
         value: "n8n-yolibot.onrender.com"
+      - key: WEBHOOK_URL
+        value: "https://n8n-yolibot.onrender.com/"
       - key: N8N_PORT
         value: "5678"
-      - key: WEBHOOK_URL
-        value: "https://n8n-yolibot.onrender.com"
+      - key: EXECUTIONS_PROCESS
+        value: "main"
+
       - key: TELEGRAM_BOT_TOKEN
         value: "8314666081:AAFmyxc9Q3Ewne7K9dyiiQmBWAKiYrXYfdE"  # Tu token real
 
