@@ -14,11 +14,6 @@ ENV N8N_HOST=0.0.0.0
 ENV GENERIC_TIMEZONE=Europe/Madrid
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
-# --------------------------
-# Instalar nodos extra opcionales (LangChain)
-# --------------------------
-# Descomenta si quieres usar nodos LangChain
-RUN npm install --global @n8n/nodes-langchain --unsafe-perm --no-fund --no-audit
 
 # --------------------------
 # Exponer puerto
