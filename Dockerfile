@@ -1,8 +1,8 @@
 # ==========================
-# Dockerfile n8n optimizado para Render
+# Dockerfile n8n listo para Render con Telegram y auth
 # ==========================
 
-# Imagen base fija de n8n
+# Imagen oficial estable de n8n
 FROM n8nio/n8n:stable
 
 # --------------------------
@@ -15,10 +15,10 @@ ENV GENERIC_TIMEZONE=Europe/Madrid
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
 # --------------------------
-# Instalar nodos extra opcionales
+# Instalar nodos extra opcionales (LangChain)
 # --------------------------
-# Descomenta esta línea si quieres usar nodos LangChain
- RUN npm install --global @n8n/nodes-langchain --no-fund --no-audit --unsafe-perm
+# Descomenta si quieres usar nodos LangChain
+RUN npm install --prefix /home/node/.n8n @n8n/nodes-langchain --no-fund --no-audit
 
 # --------------------------
 # Exponer puerto
@@ -29,3 +29,5 @@ EXPOSE 5678
 # Arranque de n8n en producción
 # --------------------------
 CMD ["n8n", "start"]
+
+
