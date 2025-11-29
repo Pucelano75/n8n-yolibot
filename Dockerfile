@@ -6,6 +6,7 @@ ENV N8N_PORT=5678
 ENV N8N_PROTOCOL=http
 ENV N8N_HOST=0.0.0.0
 ENV GENERIC_TIMEZONE=Europe/Madrid
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
 # Instala dependencias adicionales si necesitas nodos extra
 # RUN npm install --global @n8n/nodes-base @n8n/nodes-langchain
@@ -14,5 +15,5 @@ ENV GENERIC_TIMEZONE=Europe/Madrid
 EXPOSE 5678
 
 # Arranca n8n
-CMD ["n8n", "start", "--tunnel"]
+CMD ["n8n", "start"]
 
